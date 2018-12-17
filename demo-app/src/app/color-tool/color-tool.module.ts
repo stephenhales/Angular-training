@@ -4,9 +4,10 @@ import { ColorHomeComponent } from './components/color-home/color-home.component
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
+import { ColorFormComponent } from './components/color-form/color-form.component';
 
 @NgModule({
-  declarations: [ColorHomeComponent],
+  declarations: [ColorHomeComponent, ColorFormComponent],
   imports: [
     CommonModule, ReactiveFormsModule, SharedModule,
   ],

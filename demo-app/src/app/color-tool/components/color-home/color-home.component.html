@@ -9,11 +9,4 @@
   </ng-container> -->
 </ul>
 
-<form [formGroup]="colorForm">
-  <div>
-    <label for="new-color-input">New Color</label>
-    <input type="text" id="new-color-input"
-      formControlName="newColor">
-  </div>
-  <button type="button" (click)="addColor()">Add Color</button>
-</form>
+<color-form (submitColor)="addColor($event)" buttonText="Add color"></color-form>
