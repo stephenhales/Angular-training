@@ -1,32 +1,9 @@
-<header>
-  <h1>{{headerText}}</h1>
-</header>
+<tool-header [headerText]="headerText"></tool-header>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Make</th>
-      <th>Model</th>
-      <th>Year</th>
-      <th>Color</th>
-      <th>Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let car of cars">
-      <td>{{car.id}}</td>
-      <td>{{car.make}}</td>
-      <td>{{car.model}}</td>
-      <td>{{car.year}}</td>
-      <td>{{car.color}}</td>
-      <td>{{car.price}}</td>
-    </tr>
-  </tbody>
-</table>
+<car-table [cars]="cars"></car-table>
 
 <form [formGroup]="carForm">
-  <h1>Enter New Car data</h1>
+  <h1>Add new car</h1>
   <div>
     <label for="new-make-input">Make</label>
     <input type="text" id="new-make-input"
@@ -52,5 +29,5 @@
     <input type="text" id="new-price-input"
       formControlName="newPrice">
   </div>
-  <button type="button" (click)="addCar()">Add New Car</button>
+  <button type="button" (click)="addCar()">Add new car</button>
 </form>

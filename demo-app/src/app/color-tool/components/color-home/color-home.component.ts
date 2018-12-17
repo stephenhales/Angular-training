@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class ColorHomeComponent implements OnInit {
 
-  headerText = 'Color Tool';
+  headerText = 'Color tool!';
   colors = [ 'red', 'blue', 'green' ];
 
   colorForm: FormGroup;
