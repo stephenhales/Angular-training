@@ -1,0 +1,29 @@
+<form [formGroup]="carForm">
+  <h1>Add new car</h1>
+  <div>
+    <label for="new-make-input">Make</label>
+    <input type="text" id="new-make-input"
+      formControlName="newMake">
+  </div>
+  <div>
+    <label for="new-model-input">Model</label>
+    <input type="text" id="new-model-input"
+      formControlName="newModel">
+  </div>
+  <div>
+    <label for="new-year-input">Year</label>
+    <input type="text" id="new-year-input"
+      formControlName="newYear">
+  </div>
+  <div>
+    <label for="new-color-input">Color</label>
+    <input type="text" id="new-color-input"
+      formControlName="newColor">
+  </div>
+  <div>
+    <label for="new-price-input">Price</label>
+    <input type="text" id="new-price-input"
+      formControlName="newPrice">
+  </div>
+  <button type="button" (click)="doSubmitCar()">Add new car</button>
+</form>

@@ -5,11 +5,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CarHomeComponent } from './components/car-home/car-home.component';
 import { CarTableComponent } from './components/car-table/car-table.component';
 import { SharedModule } from '../shared/shared.module';
+import { CarFormComponent } from './components/car-form/car-form.component';
 
 
 @NgModule({
   declarations: [
-    CarHomeComponent, CarTableComponent
+    CarHomeComponent, CarTableComponent, CarFormComponent
   ],
   imports: [
     CommonModule, ReactiveFormsModule, SharedModule,
