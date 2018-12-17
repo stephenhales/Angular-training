@@ -3,12 +3,54 @@
 </header>
 
 <table>
-  <tr *ngFor="let car of cars">
-    <td>{{car.id}}</td>
-    <td>{{car.make}}</td>
-    <td>{{car.model}}</td>
-    <td>{{car.year}}</td>
-    <td>{{car.color}}</td>
-    <td>{{car.price}}</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Color</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of cars">
+      <td>{{car.id}}</td>
+      <td>{{car.make}}</td>
+      <td>{{car.model}}</td>
+      <td>{{car.year}}</td>
+      <td>{{car.color}}</td>
+      <td>{{car.price}}</td>
+    </tr>
+  </tbody>
 </table>
+
+<form [formGroup]="carForm">
+  <h1>Enter New Car data</h1>
+  <div>
+    <label for="new-make-input">Make</label>
+    <input type="text" id="new-make-input"
+      formControlName="newMake">
+  </div>
+  <div>
+    <label for="new-model-input">Model</label>
+    <input type="text" id="new-model-input"
+      formControlName="newModel">
+  </div>
+  <div>
+    <label for="new-year-input">Year</label>
+    <input type="text" id="new-year-input"
+      formControlName="newYear">
+  </div>
+  <div>
+    <label for="new-color-input">Color</label>
+    <input type="text" id="new-color-input"
+      formControlName="newColor">
+  </div>
+  <div>
+    <label for="new-price-input">Price</label>
+    <input type="text" id="new-price-input"
+      formControlName="newPrice">
+  </div>
+  <button type="button" (click)="addCar()">Add New Car</button>
+</form>
