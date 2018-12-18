@@ -1,7 +1,12 @@
 <tool-header [headerText]="headerText"></tool-header>
 
-<car-table [cars]="cars" 
+<car-table 
+    [carEditId]="carEditId"
+    [cars]="cars" 
     (removeCar)="doRemoveCar($event)"
-    (updateCar)="doUpdateCar($event)"></car-table>
+    (updateCar)="doUpdateCar($event)"
+    (editCar)="doEditCar($event)"
+    (cancelEdit)="doCancelEdit()">
+</car-table>
 
 <car-form (submitCar)="doAddCar($event)"></car-form>

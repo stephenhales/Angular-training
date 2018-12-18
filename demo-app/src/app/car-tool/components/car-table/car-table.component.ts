@@ -9,6 +9,9 @@ import { Car } from '../../model/Car';
 export class CarTableComponent implements OnInit {
 
   @Input()
+  carEditId: number = null;
+
+  @Input()
   cars: Car[] = [];
 
   @Output()
@@ -17,22 +20,14 @@ export class CarTableComponent implements OnInit {
   @Output()
   public updateCar = new EventEmitter<Car>();
 
-  carEditId: number;
+  @Output()
+  public editCar = new EventEmitter<number>();
+
+  @Output()
+  public cancelEdit = new EventEmitter<null>();
 
   constructor() { }
 
   ngOnInit() { }
 
-  doEditCar(carId: number) {
-    this.carEditId = carId;
-  }
-
-  doUpdateCar(car: Car) {
-    this.resetCarEditId();
-    this.updateCar.emit(car);
-  }
-
-  resetCarEditId() {
-    this.carEditId = null;
-  }
 }

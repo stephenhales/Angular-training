@@ -16,12 +16,12 @@
         *ngIf="carEditId != car.id"  
         [car]="car"
         (removeCar)="removeCar.emit($event)"
-        (editCar)="doEditCar($event)">
+        (editCar)="editCar.emit($event)">
       </tr>
       <tr class="edit-car-row" 
         *ngIf="carEditId == car.id"
-        (updateCar)="doUpdateCar($event)"
-        (cancelEdit)="resetCarEditId()"
+        (updateCar)="updateCar.emit($event)"
+        (cancelEdit)="cancelEdit.emit()"
         [car]="car">
       </tr>
     </ng-container>
