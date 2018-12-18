@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { memoize } from 'lodash';
 import { Car } from '../../model/Car';
 
 @Component({
@@ -13,38 +14,27 @@ export class CarTableComponent implements OnInit {
 
   private _cars: Car[] = [];
 
-  private _sortCache = new Map<string, Car[]>();
   private _lastCars: Car[];
 
-  public sortField = 'id';
+  private _sortField = 'id';
+
+  public sortCars: (sortField: string) => Car[];
 
   @Input()
   set cars(value: Car[]) {
     if (this._lastCars !== value) {
-      this._sortCache.clear();
+      this.sortCars = memoize(this._sortCars);
+
       this._cars = value;
       this._lastCars = value;
     }
   }
-
   get cars() {
     return this._cars;
   }
 
   get sortedCars() {
-    if (!this._sortCache.has(this.sortField)) {
-      console.log('sorting cars on ' + this.sortField);
-      this._sortCache.set(this.sortField, this._cars.concat().sort( (a: Car, b: Car) => {
-        if (a[this.sortField] > b[this.sortField]) {
-          return 1;
-        } else if (a[this.sortField] < b[this.sortField]) {
-          return -1;
-        } else {
-          return 0;
-        }
-      }));
-    }
-    return this._sortCache.get(this.sortField);
+    return this.sortCars(this._sortField);
   }
 
   @Output()
@@ -65,7 +55,19 @@ export class CarTableComponent implements OnInit {
 
   // TODO - move to car-home because it's a state.
   setSortField(fieldName: string) {
-    this.sortField = fieldName;
+    this._sortField = fieldName;
+  }
+
+  _sortCars(sortField: string) {
+    return this._cars.concat().sort( (a: Car, b: Car) => {
+      if (a[sortField] > b[sortField]) {
+        return 1;
+      } else if (a[sortField] < b[sortField]) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
   }
 
 }
