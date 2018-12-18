@@ -9,20 +9,20 @@ import { Car } from '../../model/Car';
 export class CarHomeComponent implements OnInit {
 
   headerText = 'Car home';
-  cars: Car[] = [];
+  cars: Car[] = [
+    { id: 0, make: 'Nissan', model: 'Versa', year: 2008, color: 'red', price: 15000},
+    { id: 1, make: 'Nissan', model: 'Versa', year: 2008, color: 'blue', price: 15000}
+  ];
 
   constructor() { }
 
-  ngOnInit() {
-    this.cars = this
-      .cars.concat(
-        { id: 0, make: 'Nissan', model: 'Versa', year: 2008, color: 'red', price: 15000},
-        { id: 1, make: 'Nissan', model: 'Versa', year: 2008, color: 'blue', price: 15000});
-  }
+  ngOnInit() { }
 
   addCar(newCar: Car) {
-    newCar.id = Math.max(...this.cars.map(car => car.id), 0) + 1;
-    this.cars = this.cars.concat(newCar);
+    this.cars = this.cars.concat({
+      ...newCar,
+      id: Math.max(...this.cars.map(car => car.id), 0) + 1,
+    });
   }
 
   removeCar(carId: number) {

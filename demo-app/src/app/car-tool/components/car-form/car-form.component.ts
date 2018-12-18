@@ -37,4 +37,5 @@ export class CarFormComponent implements OnInit {
 
     this.submitCar.emit(newCar);
   }
+
 }

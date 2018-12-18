@@ -6,11 +6,12 @@ import { CarHomeComponent } from './components/car-home/car-home.component';
 import { CarTableComponent } from './components/car-table/car-table.component';
 import { SharedModule } from '../shared/shared.module';
 import { CarFormComponent } from './components/car-form/car-form.component';
+import { ViewCarRowComponent } from './components/view-car-row/view-car-row.component';
 
 
 @NgModule({
   declarations: [
-    CarHomeComponent, CarTableComponent, CarFormComponent
+    CarHomeComponent, CarTableComponent, CarFormComponent, ViewCarRowComponent
   ],
   imports: [
     CommonModule, ReactiveFormsModule, SharedModule,
