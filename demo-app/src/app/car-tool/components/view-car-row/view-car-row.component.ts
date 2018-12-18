@@ -8,15 +8,22 @@ import { Car } from '../../model/Car';
 })
 export class ViewCarRowComponent implements OnInit {
 
+  @Input()
+  car: Car;
+
   @Output()
   public removeCar = new EventEmitter<number>();
 
-  @Input()
-  car: Car;
+  @Output()
+  public editCar = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit() { }
+
+  doEditCar() {
+    this.editCar.emit(this.car.id);
+  }
 
   doRemoveCar() {
     this.removeCar.emit(this.car.id);

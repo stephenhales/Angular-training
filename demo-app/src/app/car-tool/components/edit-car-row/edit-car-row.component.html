@@ -1,0 +1,36 @@
+<ng-container [formGroup]="editCarForm">
+    <td>
+      <label for="new-make-input">Make</label>
+      <input type="text" id="new-make-input"
+        formControlName="editId">
+    </td>
+    <td>
+      <label for="new-make-input">Make</label>
+      <input type="text" id="new-make-input"
+        formControlName="editMake">
+    </td>
+    <td>
+      <label for="new-model-input">Model</label>
+      <input type="text" id="new-model-input"
+        formControlName="editModel">
+    </td>
+    <td>
+      <label for="new-year-input">Year</label>
+      <input type="text" id="new-year-input"
+        formControlName="editYear">
+    </td>
+    <td>
+      <label for="new-color-input">Color</label>
+      <input type="text" id="new-color-input"
+        formControlName="editColor">
+    </td>
+    <td>
+      <label for="new-price-input">Price</label>
+      <input type="text" id="new-price-input"
+        formControlName="editPrice">
+    </td>
+    <td>
+      <button type="button" (click)="doSave()">Save</button>
+      <button type="button" (click)="cancelEdit.emit()">Cancel</button>
+    </td>
+  </ng-container>

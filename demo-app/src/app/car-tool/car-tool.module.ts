@@ -7,11 +7,12 @@ import { CarTableComponent } from './components/car-table/car-table.component';
 import { SharedModule } from '../shared/shared.module';
 import { CarFormComponent } from './components/car-form/car-form.component';
 import { ViewCarRowComponent } from './components/view-car-row/view-car-row.component';
+import { EditCarRowComponent } from './components/edit-car-row/edit-car-row.component';
 
 
 @NgModule({
   declarations: [
-    CarHomeComponent, CarTableComponent, CarFormComponent, ViewCarRowComponent
+    CarHomeComponent, CarTableComponent, CarFormComponent, ViewCarRowComponent, EditCarRowComponent
   ],
   imports: [
     CommonModule, ReactiveFormsModule, SharedModule,

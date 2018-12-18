@@ -1,5 +1,7 @@
 <tool-header [headerText]="headerText"></tool-header>
 
-<car-table [cars]="cars" (removeCar)="doRemoveCar($event)"></car-table>
+<car-table [cars]="cars" 
+    (removeCar)="doRemoveCar($event)"
+    (updateCar)="doUpdateCar($event)"></car-table>
 
 <car-form (submitCar)="doAddCar($event)"></car-form>

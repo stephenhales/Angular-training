@@ -14,7 +14,25 @@ export class CarTableComponent implements OnInit {
   @Output()
   public removeCar = new EventEmitter<number>();
 
+  @Output()
+  public updateCar = new EventEmitter<Car>();
+
+  carEditId: number;
+
   constructor() { }
 
   ngOnInit() { }
+
+  doEditCar(carId: number) {
+    this.carEditId = carId;
+  }
+
+  doUpdateCar(car: Car) {
+    this.resetCarEditId();
+    this.updateCar.emit(car);
+  }
+
+  resetCarEditId() {
+    this.carEditId = null;
+  }
 }

@@ -28,4 +28,9 @@ export class CarHomeComponent implements OnInit {
   doRemoveCar(carId: number) {
     this.cars = this.cars.filter(car => car.id !== carId);
   }
+
+  doUpdateCar(car: Car) {
+    this.doRemoveCar(car.id);
+    this.doAddCar(car);
+  }
 }
