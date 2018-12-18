@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Car } from '../../model/Car';
 
 @Component({
-  selector: '.view-car-row',
+  selector: 'tr.view-car-row',
   templateUrl: './view-car-row.component.html',
   styleUrls: ['./view-car-row.component.css']
 })
