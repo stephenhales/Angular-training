@@ -30,7 +30,9 @@ export class CarHomeComponent implements OnInit {
   }
 
   doUpdateCar(car: Car) {
-    this.doRemoveCar(car.id);
-    this.doAddCar(car);
+    const carIndex = this.cars.findIndex(c => c.id === car.id);
+    const newCars = this.cars.concat();
+    newCars[carIndex] = car;
+    this.cars = newCars;
   }
 }

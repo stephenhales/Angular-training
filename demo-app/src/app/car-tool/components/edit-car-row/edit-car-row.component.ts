@@ -24,26 +24,20 @@ export class EditCarRowComponent implements OnInit {
 
   ngOnInit() {
     this.editCarForm = this.fb.group({
-      editId: this.car.id,
-      editMake: this.car.make,
-      editModel: this.car.model,
-      editYear: this.car.year,
-      editColor: this.car.color,
-      editPrice: this.car.price,
+      id: this.car.id,
+      make: this.car.make,
+      model: this.car.model,
+      year: this.car.year,
+      color: this.car.color,
+      price: this.car.price,
     });
    }
 
   doSave() {
-    const updateCar = {
-      id: this.editCarForm.value.editId,
-      make: this.editCarForm.value.editMake,
-      model: this.editCarForm.value.editModel,
-      year: this.editCarForm.value.editYear,
-      color: this.editCarForm.value.editColor,
-      price: this.editCarForm.value.editPrice,
-    };
-
-    this.updateCar.emit(updateCar);
+    this.updateCar.emit({
+      ...this.editCarForm.value,
+      id: this.car.id
+    });
   }
 
 }
