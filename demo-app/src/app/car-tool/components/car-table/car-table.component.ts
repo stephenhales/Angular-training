@@ -13,9 +13,18 @@ export class CarTableComponent implements OnInit {
 
   private _cars: Car[] = [];
 
+  private _sortCache = new Map<string, Car[]>();
+  private _lastCars: Car[];
+
+  public sortField = 'id';
+
   @Input()
   set cars(value: Car[]) {
-    this._cars = value;
+    if (this._lastCars !== value) {
+      this._sortCache.clear();
+      this._cars = value;
+      this._lastCars = value;
+    }
   }
 
   get cars() {
@@ -23,16 +32,19 @@ export class CarTableComponent implements OnInit {
   }
 
   get sortedCars() {
-    console.log('sorting cars on ' + this.sortField);
-    return this._cars.concat().sort( (a: Car, b: Car) => {
-      if (a[this.sortField] > b[this.sortField]) {
-        return 1;
-      } else if (a[this.sortField] < b[this.sortField]) {
-        return -1;
-      } else {
-        return 0;
-      }
-    });
+    if (!this._sortCache.has(this.sortField)) {
+      console.log('sorting cars on ' + this.sortField);
+      this._sortCache.set(this.sortField, this._cars.concat().sort( (a: Car, b: Car) => {
+        if (a[this.sortField] > b[this.sortField]) {
+          return 1;
+        } else if (a[this.sortField] < b[this.sortField]) {
+          return -1;
+        } else {
+          return 0;
+        }
+      }));
+    }
+    return this._sortCache.get(this.sortField);
   }
 
   @Output()
@@ -46,8 +58,6 @@ export class CarTableComponent implements OnInit {
 
   @Output()
   public cancelEdit = new EventEmitter<null>();
-
-  public sortField = 'id';
 
   constructor() { }
 
