@@ -47,4 +47,5 @@ export class CarHomeComponent implements OnInit {
   doCancelEdit() {
     this.carEditId = null;
   }
+
 }

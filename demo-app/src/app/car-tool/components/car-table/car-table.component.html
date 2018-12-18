@@ -1,17 +1,17 @@
 <table>
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Make</th>
-      <th>Model</th>
-      <th>Year</th>
-      <th>Color</th>
-      <th>Price</th>
+      <th (click)="setSortField('id')">ID</th>
+      <th (click)="setSortField('make')">Make</th>
+      <th (click)="setSortField('model')">Model</th>
+      <th (click)="setSortField('year')">Year</th>
+      <th (click)="setSortField('color')">Color</th>
+      <th (click)="setSortField('price')">Price</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <ng-container *ngFor="let car of cars">
+    <ng-container *ngFor="let car of sortedCars">
       <tr class="view-car-row" 
         *ngIf="carEditId != car.id"  
         [car]="car"
