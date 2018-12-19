@@ -1,7 +1,7 @@
 <tool-header [headerText]="headerText"></tool-header>
 
 <ul>
-  <li *ngFor="let color of colors">{{color}}</li>
+  <li *ngFor="let color of colors">{{color | myUppercase | myAppend:headerText}}</li>
   
   <!--<ng-container *ngFor="let color of colors">
     <li>{{color}}</li>
