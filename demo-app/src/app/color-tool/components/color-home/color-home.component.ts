@@ -20,7 +20,7 @@ export class ColorHomeComponent implements OnInit {
 
   ngOnInit() {
     this.lengthLimitForm = this.fb.group({
-      length: 5,
+      length: this.lengthLimit,
     });
   }
 
