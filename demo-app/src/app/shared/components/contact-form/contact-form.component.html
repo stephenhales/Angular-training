@@ -1,0 +1,22 @@
+<!--REACTIVE FORM-->
+<form [formGroup]="contactForm">
+  <div>
+    <label>First Name</label>
+    <input type="text" formControlName="firstName">
+    <span *ngIf="contactForm.controls.firstName.invalid">First Name is a required field.</span>
+  </div>
+  <div>
+    <label>Last Name</label>
+    <input type="text" formControlName="lastName">
+    {{contactForm.controls.lastName.errors | json}}
+  </div>
+  <div>
+    <label>Phone</label>
+    <input type="text" formControlName="phone">
+  </div>
+  <div>
+    <label>Email</label>
+    <input type="text" formControlName="email">
+  </div>
+</form>
+

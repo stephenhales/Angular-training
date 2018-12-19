@@ -70,7 +70,7 @@ describe('EditCarRowComponent', () => {
     });
   });
 
-  it('should emit an updated car on save', () => {
+  xit('should emit an updated car on save', () => {
     // make sure that updateCar is emitted
     const spy = jasmine.createSpy('updateCar');
 

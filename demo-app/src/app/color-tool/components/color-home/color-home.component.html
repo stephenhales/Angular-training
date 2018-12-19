@@ -8,12 +8,10 @@
 
 <br/>
 <div>
-  <textarea id="ellipsis limit">{{text | ellipsisAppend:lengthLimit}}</textarea>
+  <textarea id="ellipsis limit">{{text | ellipsisAppend:limitInput}}</textarea>
   
-  <div [formGroup]="lengthLimitForm">
-    <input type="number" id="lengthLimit"
-      formControlName="length"
-      (change)="changeLengthLimit()">
+  <div>
+    <input type="number" [formControl]="limitInput">
   </div>
   
 </div>

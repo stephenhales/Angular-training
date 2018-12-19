@@ -1,0 +1,21 @@
+<!--TEMPLATE FORM - DO NOT USE-->
+<form>
+    <div>
+      <label>First Name</label>
+      <input type="text" myRequired minlength="3" #firstNameInput="ngModel"
+      [(ngModel)]="person.firstName" name="firstName">
+      {{firstNameInput.errors | json}}
+    </div>
+    <div>
+      <label>Last Name</label>
+      <input type="text" [(ngModel)]="person.lastName" name="lastName">
+    </div>
+    <div>
+      <label>Phone</label>
+      <input type="text" [(ngModel)]="person.phone" name="phone">
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="text" [(ngModel)]="person.email" name="email">
+    </div>
+  </form>
