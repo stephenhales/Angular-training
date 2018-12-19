@@ -33,7 +33,7 @@ describe('ViewCarRowComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should populare table row with car', () => {
+  it('should populate table row with car', () => {
 
     const fields = ['id', 'make', 'model', 'year', 'color', 'price'];
 
@@ -48,6 +48,7 @@ describe('ViewCarRowComponent', () => {
   });
 
   xit('id td has car.id', () => {
+
     const tdElements = fixture.debugElement
       .queryAll(By.css('td'))
       .map(td => td.nativeElement);
@@ -55,56 +56,19 @@ describe('ViewCarRowComponent', () => {
     expect(tdElements[0].innerText).toBeTruthy(mockCar.id);
   });
 
-  xit('make td has car.make', () => {
-    const tdElements = fixture.debugElement
-      .queryAll(By.css('td'))
-      .map(td => td.nativeElement);
-
-    expect(tdElements[1].innerText).toEqual(mockCar.make);
-
-  });
-
-  xit('model td has car.model', () => {
-    const tdElements = fixture.debugElement
-      .queryAll(By.css('td'))
-      .map(td => td.nativeElement);
-
-    expect(tdElements[2].innerText).toEqual(mockCar.model);
-  });
-
-  xit('year td has car.year', () => {
-    const tdElements = fixture.debugElement
-      .queryAll(By.css('td'))
-      .map(td => td.nativeElement);
-
-    expect(tdElements[3].innerText).toBeTruthy(mockCar.year);
-  });
-
-  xit('color td has car.color', () => {
-    const tdElements = fixture.debugElement
-      .queryAll(By.css('td'))
-      .map(td => td.nativeElement);
-
-    expect(tdElements[4].innerText).toEqual(mockCar.color);
-  });
-
-  xit('price td has car.price', () => {
-    const tdElements = fixture.debugElement
-      .queryAll(By.css('td'))
-      .map(td => td.nativeElement);
-
-    expect(tdElements[5].innerText).toBeTruthy(mockCar.price);
-  });
-
   it('should emit edit id when button clicked', () => {
+    // make sure that editCar is emitted
+    const spy = jasmine.createSpy('editCar');
 
     component.editCar.subscribe(carId => {
       expect(carId).toEqual(mockCar.id);
+      spy(carId);
     });
 
     const button = fixture.debugElement.query(By.css('button')).nativeElement;
 
     button.dispatchEvent(new Event('click'));
+    expect(spy).toHaveBeenCalledWith(mockCar.id);
   });
 
 });
