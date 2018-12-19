@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'color-home',
@@ -7,16 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColorHomeComponent implements OnInit {
 
+  lengthLimitForm: FormGroup;
+
   headerText = 'Color tool!';
   colors = [ 'red', 'blue', 'green' ];
 
-  constructor() { }
+  text = 'This string should be limited';
+  lengthLimit = 5;
 
-  ngOnInit() { }
+  constructor(private fb: FormBuilder) { }
+
+  ngOnInit() {
+    this.lengthLimitForm = this.fb.group({
+      length: 5,
+    });
+  }
 
   addColor(color: string) {
     this.colors = this
       .colors.concat(color);
+  }
+
+  changeLengthLimit() {
+    this.lengthLimit = this.lengthLimitForm.value.length;
   }
 
 }

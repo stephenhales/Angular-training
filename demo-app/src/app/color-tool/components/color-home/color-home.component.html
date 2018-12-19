@@ -2,11 +2,18 @@
 
 <ul>
   <li *ngFor="let color of colors">{{color | myUppercase | myAppend:headerText}}</li>
-  
-  <!--<ng-container *ngFor="let color of colors">
-    <li>{{color}}</li>
-    <li>{{color | uppercase}}</li>
-  </ng-container> -->
 </ul>
 
 <color-form (submitColor)="addColor($event)" buttonText="Add color"></color-form>
+
+<br/>
+<div>
+  <textarea id="ellipsis limit">{{text | ellipsisAppend:lengthLimit}}</textarea>
+  
+  <div [formGroup]="lengthLimitForm">
+    <input type="number" id="lengthLimit"
+      formControlName="length"
+      (change)="changeLengthLimit()">
+  </div>
+  
+</div>
