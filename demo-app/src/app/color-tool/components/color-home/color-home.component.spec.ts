@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ColorHomeComponent } from './color-home.component';
 
-describe('ColorHomeComponent', () => {
+xdescribe('ColorHomeComponent', () => {
   let component: ColorHomeComponent;
   let fixture: ComponentFixture<ColorHomeComponent>;
 
