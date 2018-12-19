@@ -33,7 +33,21 @@ describe('ViewCarRowComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('id td has car.id', () => {
+  it('should populare table row with car', () => {
+
+    const fields = ['id', 'make', 'model', 'year', 'color', 'price'];
+
+    const tdElements = fixture.debugElement
+      .queryAll(By.css('td'))
+      .map(td => td.nativeElement)
+      .slice(0, fields.length);
+
+    tdElements.forEach((nel, index) => {
+      expect(nel.innerText).toEqual(String(mockCar[fields[index]]));
+    });
+  });
+
+  xit('id td has car.id', () => {
     const tdElements = fixture.debugElement
       .queryAll(By.css('td'))
       .map(td => td.nativeElement);
@@ -41,7 +55,7 @@ describe('ViewCarRowComponent', () => {
     expect(tdElements[0].innerText).toBeTruthy(mockCar.id);
   });
 
-  it('make td has car.make', () => {
+  xit('make td has car.make', () => {
     const tdElements = fixture.debugElement
       .queryAll(By.css('td'))
       .map(td => td.nativeElement);
@@ -50,7 +64,7 @@ describe('ViewCarRowComponent', () => {
 
   });
 
-  it('model td has car.model', () => {
+  xit('model td has car.model', () => {
     const tdElements = fixture.debugElement
       .queryAll(By.css('td'))
       .map(td => td.nativeElement);
@@ -58,7 +72,7 @@ describe('ViewCarRowComponent', () => {
     expect(tdElements[2].innerText).toEqual(mockCar.model);
   });
 
-  it('year td has car.year', () => {
+  xit('year td has car.year', () => {
     const tdElements = fixture.debugElement
       .queryAll(By.css('td'))
       .map(td => td.nativeElement);
@@ -66,7 +80,7 @@ describe('ViewCarRowComponent', () => {
     expect(tdElements[3].innerText).toBeTruthy(mockCar.year);
   });
 
-  it('color td has car.color', () => {
+  xit('color td has car.color', () => {
     const tdElements = fixture.debugElement
       .queryAll(By.css('td'))
       .map(td => td.nativeElement);
@@ -74,7 +88,7 @@ describe('ViewCarRowComponent', () => {
     expect(tdElements[4].innerText).toEqual(mockCar.color);
   });
 
-  it('price td has car.price', () => {
+  xit('price td has car.price', () => {
     const tdElements = fixture.debugElement
       .queryAll(By.css('td'))
       .map(td => td.nativeElement);
