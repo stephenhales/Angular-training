@@ -96,4 +96,15 @@ describe('ViewCarRowComponent', () => {
     expect(tdElements[5].innerText).toBeTruthy(mockCar.price);
   });
 
+  it('should emit edit id when button clicked', () => {
+
+    component.editCar.subscribe(carId => {
+      expect(carId).toEqual(mockCar.id);
+    });
+
+    const button = fixture.debugElement.query(By.css('button')).nativeElement;
+
+    button.dispatchEvent(new Event('click'));
+  });
+
 });
