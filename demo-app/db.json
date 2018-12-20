@@ -1,0 +1,28 @@
+{
+  "cars": [
+    {
+      "id": 0,
+      "make": "Nissan",
+      "model": "Versa",
+      "year": 2008,
+      "color": "red",
+      "price": 12000
+    },
+    {
+      "id": 1,
+      "make": "Ford",
+      "model": "Focus",
+      "year": 2012,
+      "color": "blue",
+      "price": 14000
+    },
+    {
+      "make": "Honda",
+      "model": "Civic",
+      "year": 2016,
+      "color": "red",
+      "price": 13000,
+      "id": 2
+    }
+  ]
+}
