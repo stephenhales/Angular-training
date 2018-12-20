@@ -10,5 +10,46 @@
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    
+    const p1 = new Promise(resolve => setTimeout(() => resolve('a'), 500));
+    const p2 = new Promise(resolve => setTimeout(() => resolve('b'), 1000));
+    const p3 = new Promise(resolve => setTimeout(() => resolve('c'), 1500));
+    const p4 = new Promise(resolve => setTimeout(() => resolve('d'), 2000));
+  
+
+    p1.then(result => console.log('resolved ' + result));
+    p2.then(result => console.log('resolved ' + result));
+    p3.then(result => console.log('resolved ' + result));
+    p4.then(result => console.log('resolved ' + result));
+
+    Promise.all([p1, p2, p3, p4]).then(results => {
+      console.log(results);
+    });
+
+  </script>
+  <!--<script>  
+    const p = new Promise((resolve, reject) => {
+      
+      setTimeout(() => {
+        resolve();
+      }, 2000);
+
+    });
+
+    p.then((result) => {
+      console.log("resolved");
+      return Promise.reject(3);
+    }).then((result) => {
+      console.log("look at me");
+      console.log(result);
+    }).catch((result) => {
+      console.log("catch");
+      console.log(result);
+    });
+
+    console.log("waiting");
+
+  </script>-->  
 </body>
 </html>
