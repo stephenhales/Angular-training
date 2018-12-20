@@ -13,6 +13,7 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 
 
 // Observables demo
+/*
 import { interval } from 'rxjs';
 import { Observable, Observer } from 'rxjs';
 import { map, filter, take } from 'rxjs/operators';
@@ -62,3 +63,4 @@ numsTwo.subscribe((num) => {
 interval(500).pipe(map(x => x * 2), take(5)).subscribe(x => console.log('interval: ' + x), null, () => {
   console.log('interval complete');
 });
+*/

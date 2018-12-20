@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../../model/Car';
+import { CarsService } from '../../services/cars.service';
 
 @Component({
   selector: 'car-home',
@@ -12,20 +13,27 @@ export class CarHomeComponent implements OnInit {
 
   headerText = 'Car home';
 
-  cars: Car[] = [
-    { id: 0, make: 'Nissan', model: 'Versa', year: 2008, color: 'red', price: 12000},
-    { id: 1, make: 'Ford', model: 'Focus', year: 2012, color: 'blue', price: 14000}
-  ];
+  cars: Car[] = [];
 
-  constructor() { }
+  constructor(private carService: CarsService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.getCars();
+  }
+
+  getCars() {
+    return this.carService.all().subscribe(cars => {
+      this.cars = cars;
+    });
+
+    // subscriber.unsubscribe();
+  }
 
   doAddCar(newCar: Car) {
-    this.cars = this.cars.concat({
+    this.carService.create({
       ...newCar,
       id: Math.max(...this.cars.map(car => car.id), 0) + 1,
-    });
+    }).subscribe(x => this.getCars());
   }
 
   doRemoveCar(carId: number) {

@@ -23,6 +23,22 @@
       "color": "red",
       "price": 13000,
       "id": 2
+    },
+    {
+      "make": "Fiat",
+      "model": "500",
+      "year": "2018",
+      "color": "black",
+      "price": "24000",
+      "id": 3
+    },
+    {
+      "make": "Ford",
+      "model": "F150",
+      "year": "2005",
+      "color": "silver",
+      "price": "30000",
+      "id": 4
     }
   ]
 }
