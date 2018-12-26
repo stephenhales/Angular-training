@@ -10,21 +10,25 @@ export class CarsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  const url = 'http://localhost:4250/cars';
+  readonly url = 'http://localhost:4250/cars/';
 
   all() {
-    return this.httpClient.get<Car[]>(this.url);
+    return this.httpClient
+      .get<Car[]>(this.url);
   }
 
   create(car: Car) {
-    return this.httpClient.post<Car>(this.url, car);
+    return this.httpClient
+      .post<Car>(this.url, car);
   }
 
   update(car: Car) {
-    return this.httpClient.put<Car>(this.url + encodeURIComponent(car.id.toString()), car);
+    return this.httpClient
+      .put<Car>(this.url + encodeURIComponent(car.id.toString()), car);
   }
 
   delete(car: Car) {
-    return this.httpClient.delete<Car>(this.url + encodeURIComponent(car.id.toString()));
+    return this.httpClient
+      .delete<Car>(this.url + encodeURIComponent(car.id.toString()));
   }
 }

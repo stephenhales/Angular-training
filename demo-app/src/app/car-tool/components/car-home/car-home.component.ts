@@ -37,15 +37,17 @@ export class CarHomeComponent implements OnInit {
   }
 
   doRemoveCar(carId: number) {
-    this.cars = this.cars.filter(car => car.id !== carId);
+    this.carService.delete(
+      this.cars.find(car => car.id === carId)
+    ).subscribe(x => this.getCars());
   }
 
   doUpdateCar(car: Car) {
-    const carIndex = this.cars.findIndex(c => c.id === car.id);
-    const newCars = this.cars.concat();
-    newCars[carIndex] = car;
-    this.cars = newCars;
-    this.doCancelEdit();
+    this.carService.update(car)
+      .subscribe(x => {
+        this.doCancelEdit();
+        this.getCars();
+      });
   }
 
   doEditCar(carId: number) {
