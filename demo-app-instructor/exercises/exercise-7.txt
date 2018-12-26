@@ -1,0 +1,17 @@
+Exercise 7
+
+1. Create a new component named edit-car-row. The edit car row displays input fields in the make, model, year, color & price columns. In the actions column, there are two buttons: Save and Cancel.
+
+Hint: You can put a formGroup on any element including ng-container
+
+2. When the save button is clicked, the changes are saved and the row changes to a view row.
+
+3. When the cancel button is clicked, the changes are not saved and the row changes to a view row.
+
+4. Add a button with a label of 'Edit' to the view-car-row. When the button is clicked, the view-car-row component is changed to the edit-car-row component. The component is populated with the car data. Only one row is editable at a time.
+
+Hint: *ngIf="<some expression>"
+
+5. If the 'Add Car' button is clicked, 'Edit' or the 'Delete' button for another row is clicked while editing a row, the changes are dropped and the edit row changes to a view row.
+
+6. Ensure the whole application works.

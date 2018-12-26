@@ -1,0 +1,62 @@
+<form>
+  <div>
+    <label>Name</label>
+    <name-input [(ngModel)]="person.name" name="name"></name-input>
+  </div>
+  <div>
+    <label>Phone</label>
+    <input type="text" [(ngModel)]="person.phone" name="phone">
+  </div>
+  <div>
+    <label>Email</label>
+    <input type="text" [(ngModel)]="person.email" name="email">
+  </div>
+</form>
+
+{{person | json}}
+
+<!-- <form>
+    <div>
+      <label>First Name</label>
+      <input type="text" myRequired minlength="3" #firstNameInput="ngModel"
+        [(ngModel)]="person.firstName" name="firstName">
+      {{firstNameInput.errors | json}}
+    </div>
+    <div>
+      <label>Last Name</label>
+      <input type="text" [(ngModel)]="person.lastName" name="lastName">
+    </div>
+    <div>
+      <label>Phone</label>
+      <input type="text" [(ngModel)]="person.phone" name="phone">
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="text" [(ngModel)]="person.email" name="email">
+    </div>
+  </form>
+  
+  <input type="number" [formControl]="ageInput">
+  
+  {{person | json}} -->
+  
+
+<!-- <form [formGroup]="contactForm">
+    <div>
+      <label>First Name</label>
+      <input type="text" formControlName="firstName">
+      {{contactForm.controls.firstName.errors | json}}
+    </div>
+    <div>
+      <label>Last Name</label>
+      <input type="text" formControlName="lastName">
+    </div>
+    <div>
+      <label>Phone</label>
+      <input type="text" formControlName="phone">
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="text" formControlName="email">
+    </div>
+  </form> -->

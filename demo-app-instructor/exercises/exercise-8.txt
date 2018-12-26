@@ -1,0 +1,12 @@
+Exercise 8
+
+1. Turn on the unit test for ViewCarRow.
+
+2. Pass a car into the component instance of ViewCarRow using the appropriate property.
+
+3. Validate that all of the td's have the property car value
+
+queryAll instead of query
+
+4. Make sure it passes.
+

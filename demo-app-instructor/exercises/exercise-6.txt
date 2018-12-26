@@ -1,0 +1,13 @@
+Exercise 6
+
+1. Create a new component named view-car-row. The component will display one row of car data.
+
+2. Utilize the view-car-row component to display the car rows in car-table.
+
+3. Add a new column to the table with a header of 'Actions'.
+
+4. On each car row, in the actions column, add a button with a label of 'Delete'.
+
+5. When the delete button is clicked, remove the car from the array of cars in Car Tool.
+
+6. Ensure the whole application works.

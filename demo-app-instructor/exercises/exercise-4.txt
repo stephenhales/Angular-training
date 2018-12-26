@@ -1,0 +1,9 @@
+Exercise 4
+
+1. Utilize the new Tool Header component in Car Tool.
+
+2. Move the Car Table to its own component named car-table. The cars is still managed in CarHome.
+
+3. Utilize the car-table component in car-home.
+
+4. Ensure it works (including the add).

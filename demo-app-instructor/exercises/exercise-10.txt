@@ -1,0 +1,9 @@
+Exercise 10
+
+1. Create a textarea to capture some text. Create an input field to capture a length.
+
+2. Create an ellipsis pipe which receives some text and a length and display an ellipsis if the text length exceeds the specified length value. If the text is shorter, just display the text with no ellipsis.
+
+> ng g p shared/pipes/my-append
+
+3. Ensure it works.

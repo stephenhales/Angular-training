@@ -1,0 +1,13 @@
+<tool-header [headerText]="headerText"></tool-header>
+<ul>
+  <li *ngFor="let color of colors">{{color | myUppercase | myAppend:headerText}}</li>
+  <!-- <ng-template ngFor [ngForOf]="colors" let-color>
+    <li>{{color}}</li>
+    <li>{{color | uppercase}}</li>
+  </ng-template>
+  <ng-container *ngFor="let color of colors">
+    <li>{{color}}</li>
+    <li>{{color | uppercase}}</li>
+  </ng-container> -->
+</ul>
+<color-form (submitColor)="addColor($event)" buttonText="Add Color"></color-form>

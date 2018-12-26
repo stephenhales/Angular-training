@@ -1,0 +1,11 @@
+<input type="text" [formControl]="message"><br>
+Output: {{message.value | myUppercase}}
+
+<tool-header headerText="Car Tool"></tool-header>
+<button type="button" (click)="doRefreshCars()">Refresh</button>
+<div class="car-table" [cars]="cars$ | async" [editCarId]="editCarId"
+  (editCar)="doEditCar($event)" (deleteCar)="doDeleteCar($event)"
+  (saveCar)="doSaveCar($event)" (cancelCar)="doCancelCar()"></div>
+<car-form (submitCar)="doAddCar($event)" buttonText="Add Car"></car-form>
+
+<typeahead-demo></typeahead-demo>

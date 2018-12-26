@@ -1,0 +1,7 @@
+div.container {
+  display: flex;
+}
+
+div.container > div {
+  width: 50%;
+}

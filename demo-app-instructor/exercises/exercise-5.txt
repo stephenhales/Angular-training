@@ -1,0 +1,9 @@
+Exercise 5
+
+1. Move Car Form to its own component.
+
+2. Utilize Car Form in Car Home.
+
+3. When the submit button for the form is clicked, the car is added to the array of cars in Car Home.
+
+4. Ensure it all works.

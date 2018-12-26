@@ -1,0 +1,15 @@
+Exercise 1
+
+Link: https://gitlab.com/t4d-classes/angular_12172018
+
+1. Create a new module named car-tool
+
+> ng g m color-tool
+
+2. Create a new component named car-home
+
+> ng g c color-tool/components/color-home
+
+3. Export car-home component from car-tool module
+
+4. Display car-home in app component underneath color-home

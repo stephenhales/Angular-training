@@ -1,0 +1,44 @@
+{
+  "colors": [
+    { "id": 1, "name": "red" },
+    { "id": 2, "name": "black" },
+    { "id": 3, "name": "orange" },
+    { "id": 4, "name": "brown" },
+    { "id": 5, "name": "yellow" },
+    { "id": 6, "name": "blue" }
+  ],
+  "cars": [
+    {
+      "id": 1,
+      "make": "Ford",
+      "model": "Fusion",
+      "year": 2018,
+      "color": "blue",
+      "price": 20000
+    },
+    {
+      "id": 2,
+      "make": "Ford",
+      "model": "F-350 Hybrid",
+      "year": 2015,
+      "color": "marroon",
+      "price": 15000
+    },
+    {
+      "make": "r",
+      "model": "r",
+      "year": 1900,
+      "color": "r",
+      "price": 0,
+      "id": 3
+    },
+    {
+      "make": "r",
+      "model": "r",
+      "year": 1900,
+      "color": "r",
+      "price": 0,
+      "id": 4
+    }
+  ]
+}

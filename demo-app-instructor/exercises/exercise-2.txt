@@ -1,0 +1,20 @@
+Exercise 2
+
+1. Add a headerText property to car home. Set the headerText to whatever header you would like. Display the header using the header and h1 elements.
+
+2. Add a property named cars to car home. Set the property to an array of cars. For the array of cars, I would like an array of objects. It needs to be an array of objects. Not an array of arrays, and not an array for each field. An array of objects. Each object should have the following fields:
+
+colors = [ { id: 1, name: 'red' }, { id: 2, name: 'blue' } ];
+
+id: number
+make: string
+model: string
+year: number
+color: string
+price: number
+
+Only create two cars.
+
+3. Display the array of cars in a table. Use an HTML table do not use just a bunch of divs or other elements. For the table, display a column header and the rows of car data.
+
+4. Ensure the header and table of cars is displayed in the browser.
