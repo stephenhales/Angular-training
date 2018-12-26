@@ -40,5 +40,13 @@
       "price": "30000",
       "id": 4
     }
+  ],
+  "colors": [
+    { "id": 1, "name": "red" },
+    { "id": 2, "name": "black" },
+    { "id": 3, "name": "orange" },
+    { "id": 4, "name": "brown" },
+    { "id": 5, "name": "yellow" },
+    { "id": 6, "name": "blue" }
   ]
 }
